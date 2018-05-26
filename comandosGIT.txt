@@ -1,15 +1,18 @@
 git comandos
 
 modificar config
-	git config --global -user.name "name"
-	git config --global -user.password "password"
-	git config --global -e -> para consultar los valores del config
+	* git config --global -user.name "name"
+	* git config --global -user.password "password"
+	* git config --global -e -> para consultar los valores del config
 	
 inicializar proyecto
-	git init -> en la carpeta base del proyecto
+	* git init -> en la carpeta base del proyecto
 	
 comandos
-	git status -> vemos como nos encontramos, los cambios o archivos que no estan en git.
-	git add . -> añadimos todos los archivos que no están creados para después hacer un commit-
-	git commit -> hacemos un snapshot de como se encuentra el proyecto.
-	git checkout -- . -> revertir todos los cambios al último commit.
+	* git status -> vemos como nos encontramos, los cambios o archivos que no estan en git.
+	* git add . -> añadimos todos los archivos que no están creados para después hacer un commit.
+	* git add [nombre del archivo] -> (sin los corchetes) añadimos solo ese archivo.
+	* git commit -> hacemos un snapshot de como se encuentra el proyecto.
+	* git checkout -- . -> revertir todos los cambios al último commit.
+	* git log -> nos muestra una linea temporal con todos los commits que hemos hecho, diciendo usuario e email + fecha + comentario.
+	
