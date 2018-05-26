@@ -12,7 +12,20 @@ comandos
 	* git status -> vemos como nos encontramos, los cambios o archivos que no estan en git.
 	* git add . -> añadimos todos los archivos que no están creados para después hacer un commit.
 	* git add [nombre del archivo] -> (sin los corchetes) añadimos solo ese archivo.
+	* git add *.png -> agregamos todos los archivos png.
+	* git add "*.png" -> con las comillas agregamos todos los archivos png del proyecto.
+	* git add --all -> agrega todos los archivos que se hayan modificado.
+	* git add -A -> agrega todos los archivos que se hayan modificado.
+	* git add css/ -> agregamos todos los archivos dentro de la carpeta css.
+	* git add <index.html README.md tile.png> -> agregamos todos los archivos que queremos en un solo comando.
+	* git add PDFS/*.pdf -> Añade de la carpeta PDFS todos los que sean de tipo pdf.
+
 	* git commit -> hacemos un snapshot de como se encuentra el proyecto.
 	* git checkout -- . -> revertir todos los cambios al último commit.
 	* git log -> nos muestra una linea temporal con todos los commits que hemos hecho, diciendo usuario e email + fecha + comentario.
+	* git reset -> eliminamos todos los cambios del stage antes de hacer el commit.
+	* git reset *.png -> retiramos los archivos png.
+	
+
+
 	
