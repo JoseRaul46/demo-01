@@ -9,23 +9,72 @@ inicializar proyecto
 	* git init -> en la carpeta base del proyecto
 	
 comandos
-	* git status -> vemos como nos encontramos, los cambios o archivos que no estan en git.
-	* git add . -> añadimos todos los archivos que no están creados para después hacer un commit.
-	* git add [nombre del archivo] -> (sin los corchetes) añadimos solo ese archivo.
-	* git add *.png -> agregamos todos los archivos png.
-	* git add "*.png" -> con las comillas agregamos todos los archivos png del proyecto.
-	* git add --all -> agrega todos los archivos que se hayan modificado.
-	* git add -A -> agrega todos los archivos que se hayan modificado.
-	* git add css/ -> agregamos todos los archivos dentro de la carpeta css.
-	* git add <index.html README.md tile.png> -> agregamos todos los archivos que queremos en un solo comando.
-	* git add PDFS/*.pdf -> Añade de la carpeta PDFS todos los que sean de tipo pdf.
-
-	* git commit -> hacemos un snapshot de como se encuentra el proyecto.
-	* git checkout -- . -> revertir todos los cambios al último commit.
-	* git log -> nos muestra una linea temporal con todos los commits que hemos hecho, diciendo usuario e email + fecha + comentario.
-	* git reset -> eliminamos todos los cambios del stage antes de hacer el commit.
-	* git reset *.png -> retiramos los archivos png.
+	Status:
+		* git status -> vemos como nos encontramos, los cambios o archivos que no estan en git.
+		* git status -s -> muestra solo los archivos modificados/creados sin observaciones por parte de git de que podriamos hacer.
+		* git status -s -b o git status -sb -> con -b le pedimos que ademas de mostrarnos la info en modo abreviado nos muestre en la rama en la que estamos.
+	Add:
+		* git add . -> añadimos todos los archivos que no están creados para después hacer un commit.
+		* git add [nombre del archivo] -> (sin los corchetes) añadimos solo ese archivo.
+		* git add *.png -> agregamos todos los archivos png.
+		* git add "*.png" -> con las comillas agregamos todos los archivos png del proyecto.
+		* git add --all -> agrega todos los archivos que se hayan modificado.
+		* git add -A -> agrega todos los archivos que se hayan modificado.
+		* git add css/ -> agregamos todos los archivos dentro de la carpeta css.
+		* git add <index.html README.md tile.png> -> agregamos todos los archivos que queremos en un solo comando.
+		* git add PDFS/*.pdf -> Añade de la carpeta PDFS todos los que sean de tipo pdf.(debe de ir todo junto si no agregamos todos los archivos).
+	Commit:
+		* git commit -> hacemos un snapshot de como se encuentra el proyecto.
+		* git commit --amend -m "Mensaje" -> con --amend arreglamos el error anterior y al decirle -m, queremos arreglar el mensaje con este nuevo, del commit anterior.
+	Checkout:
+		* git checkout -- . -> revertir todos los cambios al último commit.
+			-* Si en vez de poner el punto ponemos el nombre del archivo revertiremos los cambios de ese unico archivo.
+			-* También podemos poner *.png revertiremos todos los cambios de los archivos de ese tipo.
+			-* css/ revertiremos todos los cambios de esa carpeta en concreto.
+	Log:
+		* git log -> nos muestra una linea temporal con todos los commits que hemos hecho, diciendo usuario e email + fecha + comentario.
+	Reset:
+		* git reset -> eliminamos todos los cambios del stage antes de hacer el commit.
+		* git reset *.png -> retiramos los archivos png.
+		* git reset --soft HEAD^ -> --soft es decirle que queremos hacer un reset blandito, hay diferentes tipos de reset. 
+		* git reset --mixed identCommit -> identCommit son los numeros y letras para identificar el commit en el log, con el vamos al punto en el tiempo que queremos conservando los cambios fuera del stage listos para commitearlos de nuevo si queremos.
+		* git reset --hard -> 
+			* Si lanzamos este comando despues de ir a otra linea temporal eliminaremos todos los cambios hechos hasta ese momento y el punto mas alto de nuestra linea será en la que nos encontremos en este momento.
+			* Si lanzamos ese comando con un identificador de commit regresaremos a ese punto, tambíen sirve para ir hacia adelante en la linea, indicando el punto con el ident del commit donde queremos ir.
+	reflog:
+		* git reglog -> con este parametros vemos mas haya del git log, vemos los viajes en la linea temporal que hemos ido haciendo, aunque hayamos usado reset --hard para eliminar commits, podríamos verlos y volver a ellos nuevamente.
 	
+	mv :
+		* git mv nombreArchivo.type nuevonombre.type(renombramos) o nombreArchivo.type carpeta/ (movemos a una carpeta nueva)
 
 
+
+Parametros (shorcuts)
+
+-b -> branch
+-s -> Silent (muestra solo la información importante).
+-A -> es --all
+-m -> mensaje, seguidamente añadimos el mensaje.
+-a -> add
+-u -> actualizar stage
+
+Parametros iniciales.
+
+* HEAD -> queremos decir que afecte al último commit.
+	* ^ -> si añadimos el caracter bajaremos un punto en la linea temporal, es decir una versión atras del último commit.
+* oneline -> resumir toda la info que sugiere git en una linea con los datos importantes.
+* status -> ver el estado en el que se encuentra, si hay cambios realizados.
+* log -> vemos los diferentes commit que se han realizado.
+* checkout 
+* reset -> volver cosas atras para realizar modificaciones pero sin eliminar:
+	* quitar cosas del stage.
+	* quitarlas para hacer un nuevo commit.
+* diff -> para observas diferencias del último commit al momento actual
+	* --staged -> si añadimos --staged a continuación veremos los cambios que tenemos en el stage antes de hacer el commit.
+* mv -> para cambiar el nombre y moverlo a otra carpteta
+
+
+
+crear un alias 
+	* git config --global alias.nombreAlias "Parametros que compondran ese alias <--all -- graph -- decorate>".
 	
