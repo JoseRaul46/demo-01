@@ -65,9 +65,36 @@ comandos
 			- quien lo subio
 			- cambios que se hicieron
 			- etc
+(Visto en Tema5)
+	stash :
+		* git stash -> alamcena el proyecto como lo tenemos hasta la fecha y nos deja la rama como en el último commit.
+		* git stash apply -> recuperamos el último stash guardado,
+		* git stash applu stash@{1} -> recuperamos el stash de la posición 1 (Penultimo guardado).
+		* git show stash -> nos muestra info al detalle de los ocurrido en ese stash.
+		* git show stash stash@{1} -> nos muestra info al detalle del stash de la posición 1.
+		* git stash pop -> POP nos hace recuperar el último stash y se elimina a su vez ese stash (como si eliminaramos una rama).
+		* git stash drop -> elimina el último stash, este es necesario xq al hacer un stash pop hubierón conflictos y git no lo elimino
+		* git stash drop stash@{1}eliminamos el stash de la posición 1.
+		* git stash save --keep-index -> guarda todos los archivos menos los que están en el stage ya que esos estarán listo para hacer el commit.
+		* git stash save --include-untracked -> guarda todos los archivos junto a los que git no les da seguimiento ya que los has creado pero aun no has realizado un commit sobre ellos.
+		* git stash save "mensaje descriptivo".
+		* git stash clear -> manera hardcore de eliminar todos los stash sin posbilidad de recuperación.
+	rebase:
+		* git rebase *rama principal* -> nos traería todos los commits después de crear una rama a ese punto ej: 
+					3*	5*					5*							5*
+					 |	 |					 |							 |
+					2*	4*		---->  		4*							4*	
+					 |	/					 /	se vería de 			 |
+					 							la suguiente manera 	3*
+					1*/					3* /		->					 |
+										 |								2*
+										2*								 |	
+										 |								1*
+										1*  
+		* git rebase -i HEAD~4 -> tomamos los últimos 4 commits, nos mostrar una pantalla de info que podemos escribir apretando la tecla A, arriba nos mostrar los commit de mas viejo a mas nuevo (el último commit estará el último '4') poniendo al principio la palabra pick, 
+		si lo que queremos es unir/fusionar los 2 último commit debemos poner la palabra squash o s en lugar de pick, seguidamente nos mostrar una pantalla similar en la que tendremos que indicar cual será el mensaje de unión de esos commits.
 
-
-
+		
 Parametros (shorcuts)
 
 -b -> branch
@@ -79,6 +106,7 @@ Parametros (shorcuts)
 	* para tag significa anotación (nombre del tag)
 -u -> actualizar stage
 -d -> delete
+-i -> interactivo para el rebase
 
 Parametros iniciales.
 
@@ -97,7 +125,8 @@ Parametros iniciales.
 	* --staged -> si añadimos --staged a continuación veremos los cambios que tenemos en el stage antes de hacer el commit.
 * mv -> para cambiar el nombre y moverlo a otra carpteta
 * bracnh -> no muestra las ramas que tenemos en git.
-
+* stash -> Guardamos una tarea para recuperarla mas tarde.
+* rebase -> movemos el head para actualizar el orden de los commits (clase 37^)
 
 
 
