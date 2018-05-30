@@ -46,7 +46,25 @@ comandos
 		* git reglog -> con este parametros vemos mas haya del git log, vemos los viajes en la linea temporal que hemos ido haciendo, aunque hayamos usado reset --hard para eliminar commits, podríamos verlos y volver a ellos nuevamente.
 	
 	mv :
-		* git mv nombreArchivo.type nuevonombre.type(renombramos) o nombreArchivo.type carpeta/ (movemos a una carpeta nueva)
+		* git mv nombreArchivo.type nuevonombre.type(renombramos) o nombreArchivo.type carpeta/ (movemos a una carpeta nueva).
+
+	checkout:
+		* git checout -- . -> eliminamos cambios y regresamos al último commit de esa rama.
+		* git checkout -b *rama* -> creamos y nos movemos a una nueva rama.
+(Visto en Tema4)
+	merge :
+		* git merge *rama a traer* -> nos movemos a la rama principal o a la que queremos traer los cambios.
+	branch :
+		* git branch -> nos muestra las ramas que tiene git.
+		* git branch -d *rama* -> eliminamos la rama de git.
+	tag :
+		* git tag -a *nombre del tag* -m "descripción del tag" -> añadir versionado
+		* git tag -a *nombre del tag* IDENTCOMMIT -m "descripción del tag" -> añadir versionado con el identificador a un commit antiguo.
+	show : 
+		* git show *nombre del tag* -> nos muestra toda la info del tag.
+			- quien lo subio
+			- cambios que se hicieron
+			- etc
 
 
 
@@ -56,8 +74,11 @@ Parametros (shorcuts)
 -s -> Silent (muestra solo la información importante).
 -A -> es --all
 -m -> mensaje, seguidamente añadimos el mensaje.
--a -> add
+-a :
+	* para commit significa add (añadir al stage)
+	* para tag significa anotación (nombre del tag)
 -u -> actualizar stage
+-d -> delete
 
 Parametros iniciales.
 
@@ -75,6 +96,7 @@ Parametros iniciales.
 * diff -> para observas diferencias del último commit al momento actual
 	* --staged -> si añadimos --staged a continuación veremos los cambios que tenemos en el stage antes de hacer el commit.
 * mv -> para cambiar el nombre y moverlo a otra carpteta
+* bracnh -> no muestra las ramas que tenemos en git.
 
 
 
