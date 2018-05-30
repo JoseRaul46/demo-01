@@ -4,6 +4,7 @@ modificar config
 	* git config --global -user.name "name"
 	* git config --global -user.password "password"
 	* git config --global -e -> para consultar los valores del config
+	* git config --global alias.nombreAlias "Parametros que compondran ese alias <--all -- graph -- decorate>".  crear un alias 
 	
 inicializar proyecto
 	* git init -> en la carpeta base del proyecto
@@ -65,7 +66,9 @@ Parametros iniciales.
 * oneline -> resumir toda la info que sugiere git en una linea con los datos importantes.
 * status -> ver el estado en el que se encuentra, si hay cambios realizados.
 * log -> vemos los diferentes commit que se han realizado.
-* checkout 
+* checkout :
+	* revertir cambios al último commit git checkout -- .
+	* cambiar de rama -> git checkout *rama*
 * reset -> volver cosas atras para realizar modificaciones pero sin eliminar:
 	* quitar cosas del stage.
 	* quitarlas para hacer un nuevo commit.
@@ -75,6 +78,6 @@ Parametros iniciales.
 
 
 
-crear un alias 
-	* git config --global alias.nombreAlias "Parametros que compondran ese alias <--all -- graph -- decorate>".
+
+	
 	
