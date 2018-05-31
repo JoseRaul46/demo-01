@@ -1,3 +1,8 @@
+Crear repositorio en github
+
+	-	Secion 6 
+
+
 git comandos
 
 modificar config
@@ -61,14 +66,14 @@ comandos
 		* git tag -a *nombre del tag* -m "descripción del tag" -> añadir versionado
 		* git tag -a *nombre del tag* IDENTCOMMIT -m "descripción del tag" -> añadir versionado con el identificador a un commit antiguo.
 	show : 
-		* git show *nombre del tag* -> nos muestra toda la info del tag.
+		* git show *nombre del tag/ident commit/fichero* -> nos muestra toda la info del tag.
 			- quien lo subio
 			- cambios que se hicieron
 			- etc
 (Visto en Tema5)
 	stash :
 		* git stash -> alamcena el proyecto como lo tenemos hasta la fecha y nos deja la rama como en el último commit.
-		* git stash apply -> recuperamos el último stash guardado,
+		* git stash apply -> recuperamos el últim o stash guardado,
 		* git stash applu stash@{1} -> recuperamos el stash de la posición 1 (Penultimo guardado).
 		* git show stash -> nos muestra info al detalle de los ocurrido en ese stash.
 		* git show stash stash@{1} -> nos muestra info al detalle del stash de la posición 1.
@@ -79,6 +84,8 @@ comandos
 		* git stash save --include-untracked -> guarda todos los archivos junto a los que git no les da seguimiento ya que los has creado pero aun no has realizado un commit sobre ellos.
 		* git stash save "mensaje descriptivo".
 		* git stash clear -> manera hardcore de eliminar todos los stash sin posbilidad de recuperación.
+		* git stash list -> para ver todos los trabajos pendientes en el stash
+
 	rebase:
 		* git rebase *rama principal* -> nos traería todos los commits después de crear una rama a ese punto ej: 
 					3*	5*					5*							5*
@@ -92,8 +99,22 @@ comandos
 										 |								1*
 										1*  
 		* git rebase -i HEAD~4 -> tomamos los últimos 4 commits, nos mostrar una pantalla de info que podemos escribir apretando la tecla A, arriba nos mostrar los commit de mas viejo a mas nuevo (el último commit estará el último '4') poniendo al principio la palabra pick, 
-		si lo que queremos es unir/fusionar los 2 último commit debemos poner la palabra squash o s en lugar de pick, seguidamente nos mostrar una pantalla similar en la que tendremos que indicar cual será el mensaje de unión de esos commits.
+			- si lo que queremos es unir/fusionar los 2 último commit debemos poner la palabra squash o s en lugar de pick, seguidamente nos mostrar una pantalla similar en la que tendremos que indicar cual será el mensaje de unión de esos commits.
+			- si lo que queremos es modificar un commit debemos cambiar la palabra pick por edit, despues no estaremos en ninguna rama (limbo) seguido esto debemos hacer git reset HEAD^ para irnos al último commit. en es punto podemos hacer las modificaciones que queramos seprar por commits eliminar cambios, etc. Cuando tengamos las cosas como queremos debemos hacer git rebase --continue y se guardaran los cambios.
 
+
+(Visto en el tema6)
+	push:
+		* git push --tag -> subimos todos los commits que hayamos marcado como tags a github.
+
+	remote
+		* git remote -> nos dice los repositorio que tenemos.
+		* git remote -v -> nos indica las URLs donde hacemos los fetch y el push. 
+
+Parametros rebase:
+	- Squash(s): unir commits.
+	- reword(r): renombrar el mensaje del commit.
+	- edit(e): Podemos editar el commit , modificar los archivos que se subiron en ese commit , separarlo en dos, solo subir un archivo y el otro revertir cambios etc.
 		
 Parametros (shorcuts)
 
@@ -127,6 +148,7 @@ Parametros iniciales.
 * bracnh -> no muestra las ramas que tenemos en git.
 * stash -> Guardamos una tarea para recuperarla mas tarde.
 * rebase -> movemos el head para actualizar el orden de los commits (clase 37^)
+
 
 
 
