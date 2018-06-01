@@ -106,10 +106,20 @@ comandos
 (Visto en el tema6)
 	push:
 		* git push --tag -> subimos todos los commits que hayamos marcado como tags a github.
+		* git push -u origin *branch* -> nos sube todos los cambios a nuestra rama remota y con el -u adjudicamos por defecto los pushes a esa rama
+		
 
 	remote
 		* git remote -> nos dice los repositorio que tenemos.
 		* git remote -v -> nos indica las URLs donde hacemos los fetch y el push. 
+
+(visto en el tema7)
+	fetch:
+		* git fetch -> nos trae todos los cambios que hay en remoto.
+
+	pull: 
+		* git pull origin *branch* -> nos trae todos los cambio y a la vez mergea en local
+
 
 Parametros rebase:
 	- Squash(s): unir commits.
