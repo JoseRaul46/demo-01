@@ -107,7 +107,8 @@ comandos
 	push:
 		* git push --tag -> subimos todos los commits que hayamos marcado como tags a github.
 		* git push -u origin *branch* -> nos sube todos los cambios a nuestra rama remota y con el -u adjudicamos por defecto los pushes a esa rama
-		
+		* git push -d origin *branch* -> eliminamos una rama en remoto.
+		* git push origin :*branch* -> realiza la misma función que la anterior, eliminamos una rama en remoto.
 
 	remote
 		* git remote -> nos dice los repositorio que tenemos.
@@ -120,7 +121,10 @@ comandos
 	pull: 
 		* git pull origin *branch* -> nos trae todos los cambio y a la vez mergea en local
 
-
+(Visto en el tema8)
+	prune:
+		* git remote prune origin -> limpiamos todas las ramas del remoto que hayan sido eliminadas en el servidor pero nos sigan apareciendo como existentes y no podamos borrarlas con un push -d o push origin :*branch*
+		
 Parametros rebase:
 	- Squash(s): unir commits.
 	- reword(r): renombrar el mensaje del commit.
