@@ -65,6 +65,7 @@ comandos
 	tag :
 		* git tag -a *nombre del tag* -m "descripción del tag" -> añadir versionado
 		* git tag -a *nombre del tag* IDENTCOMMIT -m "descripción del tag" -> añadir versionado con el identificador a un commit antiguo.
+		* gti tag -d *nombre del tag* -> eliminamos un tag
 	show : 
 		* git show *nombre del tag/ident commit/fichero* -> nos muestra toda la info del tag.
 			- quien lo subio
@@ -124,7 +125,7 @@ comandos
 (Visto en el tema8)
 	prune:
 		* git remote prune origin -> limpiamos todas las ramas del remoto que hayan sido eliminadas en el servidor pero nos sigan apareciendo como existentes y no podamos borrarlas con un push -d o push origin :*branch*
-		
+
 Parametros rebase:
 	- Squash(s): unir commits.
 	- reword(r): renombrar el mensaje del commit.
