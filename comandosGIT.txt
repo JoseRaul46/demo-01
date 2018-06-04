@@ -126,6 +126,12 @@ comandos
 	prune:
 		* git remote prune origin -> limpiamos todas las ramas del remoto que hayan sido eliminadas en el servidor pero nos sigan apareciendo como existentes y no podamos borrarlas con un push -d o push origin :*branch*
 
+(Visto en tutorial)
+	rm:
+		* git rm *Archivo* -> eliminara del proyecto el archivo siempre que este  traqueado/commit
+		* git rm --cached *Archivo* (git reset)-> elimina el archivo del stage.
+		* git rm -f *Archivo* -> elimina el archivo del stage y de local
+
 Parametros rebase:
 	- Squash(s): unir commits.
 	- reword(r): renombrar el mensaje del commit.
@@ -163,6 +169,16 @@ Parametros iniciales.
 * bracnh -> no muestra las ramas que tenemos en git.
 * stash -> Guardamos una tarea para recuperarla mas tarde.
 * rebase -> movemos el head para actualizar el orden de los commits (clase 37^)
+* rm -> remove. elimina archivos.
+
+
+Generando clave SSH en Windows
+
+- Dentro de la carpeta usuarios / tu usuario  / click derecho y abrimos la terminal de git BASH HERE
+- Comprobamos si existe la carptea .ssh -> ls .ssh 
+- Creamos la carpeta .ssh -> mkdir .ssh 
+- Introducimos el siguiente código (ssh-keygen -t rsa -C "Email de tu cuenta de github")
+
 
 
 
